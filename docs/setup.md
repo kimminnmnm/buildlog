@@ -65,6 +65,10 @@ FastAPI 공식 보안 안내에 맞춰 비밀번호는 Argon2로 처리하고 �
 - 자동 테스트는 Supabase에 접속하지 않습니다.
 - PostgreSQL에만 있는 기능에 의존하지 않고 두 데이터베이스에서 같은 모델과 기능 규칙을 사용합니다.
 
+### 현재 수업 단계의 로컬 DB 대체
+
+Supabase 수업을 진행하기 전까지는 실제 서비스 DB 연결을 사용하지 않습니다. 로컬 개발 서버는 `database/buildlog.sqlite3`에 저장하고, 자동 테스트는 별도의 SQLite3 데이터베이스를 사용합니다. Supabase 연결 문자열은 아직 필요하지 않으며 Phase 14에서 설정합니다.
+
 ## 4. 개발 주소
 
 | 구분 | 주소 |
@@ -161,12 +165,12 @@ npm.cmd run build
 
 ## 7. 사용자 준비 사항
 
-Phase 0과 Phase 1에는 사용자가 입력해야 하는 비밀값이 없습니다.
+Phase 0부터 Phase 3까지는 사용자가 입력해야 하는 Supabase 비밀값이 없습니다.
 
-Phase 2 전까지 다음 항목을 준비합니다.
+Supabase를 연결하는 Phase 14 전까지는 다음 항목을 준비하지 않아도 됩니다. Phase 14를 시작할 때 준비합니다.
 
 1. Supabase 프로젝트를 만듭니다.
 2. Supabase PostgreSQL 연결 문자열을 확인합니다.
-3. Phase 2에서 만들어질 `backend/.env`의 `DATABASE_URL`에 연결 문자열을 직접 입력합니다.
+3. Phase 14에서 만들어질 배포 환경 변수의 `DATABASE_URL`에 연결 문자열을 직접 입력합니다.
 
 연결 문자열, 데이터베이스 비밀번호, `AUTH_SECRET_KEY`는 채팅이나 문서에 보내지 않습니다. Supabase 프로젝트가 이미 있다면 새로 만들 필요가 없습니다.

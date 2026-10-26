@@ -7,6 +7,10 @@ class Settings(BaseSettings):
     app_env: str = "development"
     api_v1_prefix: str = "/api/v1"
     frontend_origin: str = "http://localhost:5173"
+    database_url: str | None = None
+    test_database_url: str = "sqlite+pysqlite:///:memory:"
+    auth_secret_key: str | None = None
+    access_token_expire_minutes: int = 60
 
     model_config = SettingsConfigDict(
         env_file=".env",
