@@ -1,0 +1,21 @@
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Dependency directories
+.venv/
+node_modules/
+
+# Generated output and caches
+dist/
+__pycache__/
+.pytest_cache/
+.coverage
+coverage/
+.vite/
+*.sqlite3
+*.sqlite3-journal
+
+# Log files
+*.log
